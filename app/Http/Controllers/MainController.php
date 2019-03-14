@@ -54,16 +54,22 @@ class MainController
     public function filter(Request $request)
     {
         $data = $this->gettingAggregatedByDate($request->all());
-        $temp = [];
-
-        foreach ($data as $dt){
-            $temp[$dt->date][$dt->log_success ? "success" : "fail"] = $dt->counter;
-        };
 
         return view('welcome')->with(array(
-            'message' => $temp,
+            'message' => $this->margeDate($data),
             'users' => User::all(),
             'countries' => country::all()
         ));
+    }
+
+    private function margeDate($data)
+    {
+        $temp = [];
+
+        foreach ($data as $dt) {
+            $temp[$dt->date][$dt->log_success ? "success" : "fail"] = $dt->counter;
+        };
+
+        return $temp;
     }
 }
