@@ -12,16 +12,25 @@
         height: 600px;
         margin: 0 auto;
         text-align: center;
-        background-color: #f8ffbe;
+        background: #74ebd5;
+        background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px #ccc;
+        padding: 20px;
+        box-sizing: border-box;
     }
+
     .formWrapper{
         margin-bottom: 25px;
     }
+
     table{
         width: 70%;
         padding: 25px;
         margin: 0 auto;
     }
+
     table, th, td {
         border: 1px solid black;
     }
